@@ -1,11 +1,10 @@
+import { Main } from "./components/main/Main";
 
 
 function App() {
   return (
     <div className="App">
-      hihihi
-      this is folan branch
-      want to push in folan branch
+      <Main />
     </div>
   );
 }
