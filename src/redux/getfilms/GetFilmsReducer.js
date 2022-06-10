@@ -8,20 +8,21 @@ export const getFilmsReducer = (state = initialState , action) => {
     switch(action.type) {
         case "GET-FILMS-REQUEST" :
             return {
+                ...state,
                 loading :true
             }
         case "GET-FILMS-SUCCESS" :
             return {
                 ...state,
                 loading :false,
-                data : action.pyload
+                data : action.payload
             }
         case "GET-FILMS-FAILURE" :
             return {
                 ...state,
                 loading : false ,
-                error : action.pyload
+                error : action.payload
             }
-        default : return state
+        default : return state;
     }
 }

@@ -24,7 +24,10 @@ export const getFilms = (i) => {
     return (dispatch) => {
         dispatch(getFilmsRequest());
         axios.get(`http://moviesapi.ir/api/v1/movies?page=${i}`)
-        .then(response => dispatch(getFilmsSuccess(response.data.data)))
-        .catch(error => dispatch(getFilmsFailure(error)))
+        .then(response =>{
+            dispatch(getFilmsSuccess(response.data.data))
+             console.log(response.data.data);
+        })
+        .catch(error => dispatch(getFilmsFailure(error.massage)))
     }
 }
